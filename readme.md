@@ -1,6 +1,6 @@
 # Hybrid\\Lang
 
-Hybrid Lang is an add-on package for the [Hybrid Core](https://github.com/justintadlock/hybrid-core) WordPress framework.
+Hybrid Lang is an add-on package for the [Hybrid Core](https://github.com/themehybrid/hybrid-core) WordPress framework.
 This file holds the `Lang` class, which deals with loading textdomains and locale-specific function files.
 
 ## Requirements
@@ -24,7 +24,7 @@ cd path/to/wp-content/themes/<your-theme-name>
 Then, use Composer to install the package.
 
 ```bash
-composer require justintadlock/hybrid-lang
+composer require themehybrid/hybrid-lang
 ```
 
 ### Register the service provider
@@ -45,4 +45,4 @@ $app->provider( \Hybrid\Lang\LanguageServiceProvider::class );
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2021 &copy; [Justin Tadlock](http://justintadlock.com).
+2008&thinsp;&ndash;&thinsp;2021 &copy; [Justin Tadlock](https://themehybrid.com/).
