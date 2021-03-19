@@ -13,7 +13,7 @@
 
 namespace Hybrid\Lang\Contracts;
 
-use Hybrid\Support\Contracts\Bootable;
+use Hybrid\Contracts\Bootable;
 
 /**
  * Language interface.
