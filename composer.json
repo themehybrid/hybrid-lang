@@ -21,7 +21,7 @@
 			"Hybrid\\Lang\\" : "src/"
 		},
 		"files" : [
-			"src/bootstrap-lang.php"
+			"src/functions-lang.php"
 		]
 	},
 	"require"     : {
