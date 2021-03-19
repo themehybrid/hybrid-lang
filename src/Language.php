@@ -7,7 +7,7 @@
  *
  * @package   HybridCore
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2008 - 2019, Justin Tadlock
+ * @copyright Copyright (c) 2008 - 2021, Justin Tadlock
  * @link      https://themehybrid.com/hybrid-core
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -19,7 +19,7 @@ use Hybrid\Lang\Contracts\Language as LanguageContract;
 /**
  * Language class.
  *
- * @since  5.0.0
+ * @since  1.0.0
  * @access public
  */
 class Language implements LanguageContract {
@@ -28,7 +28,7 @@ class Language implements LanguageContract {
 	 * The parent theme's textdomain. Gets set to the value of the `Text
 	 * Domain` header in `style.css`.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -38,7 +38,7 @@ class Language implements LanguageContract {
 	 * The child theme's textdomain. Gets set to the value of the `Text
 	 * Domain` header in `style.css`.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -48,7 +48,7 @@ class Language implements LanguageContract {
 	 * Absolute path to the parent theme's language folder. Theme authors
 	 * should set the relative path via the `Domain Path` header in `style.css`.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -58,7 +58,7 @@ class Language implements LanguageContract {
 	 * Absolute path to the child theme's language folder. Theme authors
 	 * should set the relative path via the `Domain Path` header in `style.css`.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access protected
 	 * @var    string|null
 	 */
@@ -67,7 +67,7 @@ class Language implements LanguageContract {
 	/**
 	 * Stores the language-related theme info into class properties.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
@@ -89,7 +89,7 @@ class Language implements LanguageContract {
 	/**
 	 * Adds the class' actions and filters.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
@@ -112,7 +112,7 @@ class Language implements LanguageContract {
 	 * Gets the parent theme textdomain. This allows the framework to
 	 * recognize the proper textdomain of the parent theme.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return string
 	 */
@@ -125,7 +125,7 @@ class Language implements LanguageContract {
 	 * Gets the child theme textdomain. This allows the framework to
 	 * recognize the proper textdomain of the child theme.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return string
 	 */
@@ -138,7 +138,7 @@ class Language implements LanguageContract {
 	 * Returns the full directory path for the parent theme's domain path set
 	 * in `style.css`. No trailing slash.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @param  string  $file
 	 * @return string
@@ -154,7 +154,7 @@ class Language implements LanguageContract {
 	 * Returns the full directory path for the child theme's domain path set
 	 * in `style.css`. No trailing slash.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @param  string  $file
 	 * @return string
@@ -174,7 +174,7 @@ class Language implements LanguageContract {
 	 * parent theme locale file.  This is standard practice in core WP for
 	 * allowing pluggable functions if a theme author so desires.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
@@ -204,7 +204,7 @@ class Language implements LanguageContract {
 	 * empty string for the MO file path. This gets overwritten by the
 	 * `overrideLoadTextdomain()` filter.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
@@ -220,7 +220,7 @@ class Language implements LanguageContract {
 	 * the `hybrid-core` domain's translations to the theme's. That way,
 	 * we're not loading multiple of the same MO files.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @global array   $l10n
 	 * @param  bool    $override
@@ -256,7 +256,7 @@ class Language implements LanguageContract {
 	 * child themes to house a copy of the parent theme translations so that
 	 * it doesn't get overwritten when a parent theme is updated.
 	 *
-	 * @since  5.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @param  string $mofile File name of the .mo file.
 	 * @param  string $domain The textdomain currently being filtered.

@@ -7,7 +7,7 @@
  *
  * @package   HybridCore
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2008 - 2019, Justin Tadlock
+ * @copyright Copyright (c) 2008 - 2021, Justin Tadlock
  * @link      https://themehybrid.com/hybrid-core
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -20,7 +20,7 @@ namespace Hybrid\Lang;
  * the site's locale. Note that the locale is all lowercase and hyphenated (for
  * example, `en_US` becomes `en-us`).
  *
- * @since  5.0.0
+ * @since  1.0.0
  * @access public
  * @return array
  */
@@ -49,7 +49,7 @@ function hierarchy() {
  * Gets the language for the currently-viewed page.  It strips the region from
  * the locale if needed and just returns the language code.
  *
- * @since  5.0.0
+ * @since  1.0.0
  * @access public
  * @param  string  $locale
  * @return string
@@ -68,7 +68,7 @@ function language( $locale = '' ) {
  * the locale if needed.  Note that not all locales will have a region, so this
  * might actually return the same thing as `language()`.
  *
- * @since  5.0.0
+ * @since  1.0.0
  * @access public
  * @param  string  $locale
  * @return string
