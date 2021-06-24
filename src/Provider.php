@@ -14,7 +14,7 @@
 
 namespace Hybrid\Lang;
 
-use Hybrid\Lang\Contracts\Language as LanguageContract;
+use Hybrid\Lang\Contracts\Language;
 use Hybrid\Tools\ServiceProvider;
 
 /**
@@ -23,7 +23,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  1.0.0
  * @access public
  */
-class LanguageServiceProvider extends ServiceProvider {
+class Provider extends ServiceProvider {
 
 	/**
 	 * Registration callback that adds a single instance of the language
@@ -34,10 +34,7 @@ class LanguageServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-
-		$this->app->singleton( LanguageContract::class, Language::class );
-
-		$this->app->alias( LanguageContract::class, 'language' );
+		$this->app->singleton( Language::class, Component::class );
 	}
 
 	/**
@@ -48,7 +45,6 @@ class LanguageServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-
-		$this->app->resolve( 'language' )->boot();
+		$this->app->resolve( Language::class )->boot();
 	}
 }

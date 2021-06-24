@@ -21,14 +21,12 @@
 			"Hybrid\\Lang\\" : "src/"
 		},
 		"files" : [
-			"src/functions-lang.php"
+			"src/functions-helpers.php"
 		]
 	},
 	"require"     : {
 		"php" : ">=5.6",
-		"themehybrid/hybrid-contracts" : "^1.0.0"
-	},
-	"suggest"     : {
-		"themehybrid/hybrid-tools" : "Needed if registering the service provider with Hybrid Core."
+		"themehybrid/hybrid-contracts" : "dev-master",
+		"themehybrid/hybrid-tools"     : "dev-master"
 	}
 }

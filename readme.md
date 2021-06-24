@@ -1,6 +1,6 @@
 # Hybrid\\Lang
 
-Hybrid Lang is an add-on package for the [Hybrid Core](https://github.com/themehybrid/hybrid-core) WordPress framework. This file holds the `Lang` class, which deals with loading textdomains and locale-specific function files.
+Hybrid Lang includes a `Component` class for handling the `hybrid-core` textdomain when building a theme. This should be used alongside any packages that has uses text strings.  It also includes locale-specific helper functions.
 
 ## Requirements
 
@@ -37,7 +37,7 @@ $themeslug = new \Hybrid\Core\Application();
 After that point, you can register the service provider:
 
 ```php
-$themeslug->provider( \Hybrid\Lang\LanguageServiceProvider::class );
+$themeslug->provider( \Hybrid\Lang\Provider::class );
 ```
 
 ## Copyright and License

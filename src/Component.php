@@ -1,6 +1,6 @@
 <?php
 /**
- * Language class.
+ * Language component class.
  *
  * This file holds the `Lang` class, which deals with loading textdomains and
  * locale-specific function files.
@@ -14,7 +14,7 @@
 
 namespace Hybrid\Lang;
 
-use Hybrid\Lang\Contracts\Language as LanguageContract;
+use Hybrid\Lang\Contracts\Language;
 
 /**
  * Language class.
@@ -22,7 +22,7 @@ use Hybrid\Lang\Contracts\Language as LanguageContract;
  * @since  1.0.0
  * @access public
  */
-class Language implements LanguageContract {
+class Component implements Language {
 
 	/**
 	 * The parent theme's textdomain. Gets set to the value of the `Text
@@ -78,7 +78,7 @@ class Language implements LanguageContract {
 		$this->parent_textdomain = $theme->get( 'TextDomain' );
 		$this->parent_path       = trim( $theme->get( 'DomainPath' ), '/' );
 
-		if ( \Hybrid\Theme\is_child_theme() ) {
+		if ( is_child_theme() ) {
 			$child = wp_get_theme();
 
 			$this->child_textdomain = $child->get( 'TextDomain' );
@@ -117,7 +117,6 @@ class Language implements LanguageContract {
 	 * @return string
 	 */
 	public function parentTextdomain() {
-
 		return $this->parent_textdomain;
 	}
 
@@ -130,7 +129,6 @@ class Language implements LanguageContract {
 	 * @return string
 	 */
 	public function childTextdomain() {
-
 		return $this->child_textdomain;
 	}
 
@@ -189,7 +187,7 @@ class Language implements LanguageContract {
 		$theme_func = $this->parentPath( "{$locale}.php" );
 
 		// If file exists in child theme.
-		if ( \Hybrid\Theme\is_child_theme() && file_exists( $child_func ) ) {
+		if ( is_child_theme() && file_exists( $child_func ) ) {
 			require_once( $child_func );
 		}
 
@@ -209,7 +207,6 @@ class Language implements LanguageContract {
 	 * @return void
 	 */
 	public function loadTextdomain() {
-
 		load_textdomain( 'hybrid-core', '' );
 	}
 
@@ -276,7 +273,7 @@ class Language implements LanguageContract {
 			$theme_mofile = $this->parentPath( "{$domain}-{$locale}.mo" );
 
 			// Overwrite the mofile if it exists.
-			if ( \Hybrid\Theme\is_child_theme() && file_exists( $child_mofile ) ) {
+			if ( is_child_theme() && file_exists( $child_mofile ) ) {
 
 				$mofile = $child_mofile;
 
