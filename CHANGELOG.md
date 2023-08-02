@@ -2,6 +2,14 @@
 
 You can see the changes made via the [commit log](https://github.com/themehybrid/hybrid-lang/commits/master) for the latest release.
 
+## [1.0.2] - 2023-08-02
+
+### Changed
+
+- Lint php files
+- Lint composer.json
+- Update license link
+
 ## [1.0.1] - 2023-02-22
 
 ### Changed
