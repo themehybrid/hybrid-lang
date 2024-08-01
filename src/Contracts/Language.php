@@ -18,30 +18,20 @@ use Hybrid\Contracts\Bootable;
 
 /**
  * Language interface.
- *
- * @since  1.0.0
- *
- * @access public
  */
 interface Language extends Bootable {
 
     /**
      * Returns the parent theme textdomain.
      *
-     * @since  1.0.0
      * @return string
-     *
-     * @access public
      */
     public function parentTextdomain();
 
     /**
      * Returns the child theme textdomain.
      *
-     * @since  1.0.0
      * @return string
-     *
-     * @access public
      */
     public function childTextdomain();
 
@@ -49,11 +39,8 @@ interface Language extends Bootable {
      * Returns the full directory path for the parent theme's domain path
      * and should allow a file/path to be appended.
      *
-     * @since  1.0.0
-     * @param  string $file
+     * @param string $file
      * @return string
-     *
-     * @access public
      */
     public function parentPath( $file = '' );
 
@@ -61,11 +48,8 @@ interface Language extends Bootable {
      * Returns the full directory path for the child theme's domain path
      * and should allow a file/path to be appended.
      *
-     * @since  1.0.0
-     * @param  string $file
+     * @param string $file
      * @return string
-     *
-     * @access public
      */
     public function childPath( $file = '' );
 
