@@ -9,7 +9,7 @@
  * @link      https://github.com/themehybrid/hybrid-lang
  *
  * @author    Theme Hybrid
- * @copyright Copyright (c) 2008 - 2023, Theme Hybrid
+ * @copyright Copyright (c) 2008 - 2024, Theme Hybrid
  * @license   https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -19,10 +19,6 @@ use Hybrid\Lang\Contracts\Language;
 
 /**
  * Language class.
- *
- * @since  1.0.0
- *
- * @access public
  */
 class Component implements Language {
 
@@ -30,10 +26,7 @@ class Component implements Language {
      * The parent theme's textdomain. Gets set to the value of the `Text
      * Domain` header in `style.css`.
      *
-     * @since  1.0.0
-     * @var    string
-     *
-     * @access protected
+     * @var string
      */
     protected $parent_textdomain = '';
 
@@ -41,10 +34,7 @@ class Component implements Language {
      * The child theme's textdomain. Gets set to the value of the `Text
      * Domain` header in `style.css`.
      *
-     * @since  1.0.0
-     * @var    string
-     *
-     * @access protected
+     * @var string
      */
     protected $child_textdomain = '';
 
@@ -52,10 +42,7 @@ class Component implements Language {
      * Absolute path to the parent theme's language folder. Theme authors
      * should set the relative path via the `Domain Path` header in `style.css`.
      *
-     * @since  1.0.0
-     * @var    string
-     *
-     * @access protected
+     * @var string
      */
     protected $parent_path = '';
 
@@ -63,20 +50,14 @@ class Component implements Language {
      * Absolute path to the child theme's language folder. Theme authors
      * should set the relative path via the `Domain Path` header in `style.css`.
      *
-     * @since  1.0.0
-     * @var    string|null
-     *
-     * @access protected
+     * @var string|null
      */
     protected $child_path = '';
 
     /**
      * Stores the language-related theme info into class properties.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function __construct() {
 
@@ -98,10 +79,7 @@ class Component implements Language {
     /**
      * Adds the class' actions and filters.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function boot() {
 
@@ -122,10 +100,7 @@ class Component implements Language {
      * Gets the parent theme textdomain. This allows the framework to
      * recognize the proper textdomain of the parent theme.
      *
-     * @since  1.0.0
      * @return string
-     *
-     * @access public
      */
     public function parentTextdomain() {
         return $this->parent_textdomain;
@@ -135,10 +110,7 @@ class Component implements Language {
      * Gets the child theme textdomain. This allows the framework to
      * recognize the proper textdomain of the child theme.
      *
-     * @since  1.0.0
      * @return string
-     *
-     * @access public
      */
     public function childTextdomain() {
         return $this->child_textdomain;
@@ -148,11 +120,8 @@ class Component implements Language {
      * Returns the full directory path for the parent theme's domain path set
      * in `style.css`. No trailing slash.
      *
-     * @since  1.0.0
-     * @param  string $file
+     * @param string $file
      * @return string
-     *
-     * @access public
      */
     public function parentPath( $file = '' ) {
 
@@ -165,11 +134,8 @@ class Component implements Language {
      * Returns the full directory path for the child theme's domain path set
      * in `style.css`. No trailing slash.
      *
-     * @since  1.0.0
-     * @param  string $file
+     * @param string $file
      * @return string
-     *
-     * @access public
      */
     public function childPath( $file = '' ) {
 
@@ -186,10 +152,7 @@ class Component implements Language {
      * parent theme locale file.  This is standard practice in core WP for
      * allowing pluggable functions if a theme author so desires.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function loadLocaleFunctions() {
 
@@ -217,10 +180,7 @@ class Component implements Language {
      * empty string for the MO file path. This gets overwritten by the
      * `overrideLoadTextdomain()` filter.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function loadTextdomain() {
         load_textdomain( 'hybrid-core', '' );
@@ -233,14 +193,11 @@ class Component implements Language {
      * the `hybrid-core` domain's translations to the theme's. That way,
      * we're not loading multiple of the same MO files.
      *
-     * @since  1.0.0
      * @global array   $l10n
-     * @param  bool   $override
-     * @param  string $domain
-     * @param  string $mofile
+     * @param bool   $override
+     * @param string $domain
+     * @param string $mofile
      * @return bool
-     *
-     * @access public
      */
     public function overrideLoadTextdomain( $override, $domain, $mofile ) {
         global $l10n;
@@ -270,18 +227,15 @@ class Component implements Language {
      * child themes to house a copy of the parent theme translations so that
      * it doesn't get overwritten when a parent theme is updated.
      *
-     * @since  1.0.0
-     * @param  string $mofile File name of the .mo file.
-     * @param  string $domain The textdomain currently being filtered.
+     * @param string $mofile File name of the .mo file.
+     * @param string $domain The textdomain currently being filtered.
      * @return string
-     *
-     * @access public
      */
     public function loadTextdomainMofile( $mofile, $domain ) {
 
         // If the `$domain` is for the parent or child theme, search for
         // a `$domain-$locale.mo` file.
-        if ( $domain === $this->parentTextdomain() || $domain === $this->childTextdomain() ) {
+        if ( $this->parentTextdomain() === $domain || $this->childTextdomain() === $domain ) {
 
             // Get the locale.
             $locale = is_admin() ? get_user_locale() : get_locale();

@@ -9,7 +9,7 @@
  * @link      https://github.com/themehybrid/hybrid-lang
  *
  * @author    Theme Hybrid
- * @copyright Copyright (c) 2008 - 2023, Theme Hybrid
+ * @copyright Copyright (c) 2008 - 2024, Theme Hybrid
  * @license   https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -22,10 +22,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\hierarchy' ) ) {
      * the site's locale. Note that the locale is all lowercase and hyphenated (for
      * example, `en_US` becomes `en-us`).
      *
-     * @since  1.0.0
      * @return array
-     *
-     * @access public
      */
     function hierarchy() {
 
@@ -49,17 +46,13 @@ if ( ! function_exists( __NAMESPACE__ . '\\hierarchy' ) ) {
     }
 }
 
-
 if ( ! function_exists( __NAMESPACE__ . '\\language' ) ) {
     /**
      * Gets the language for the currently-viewed page.  It strips the region from
      * the locale if needed and just returns the language code.
      *
-     * @since  1.0.0
-     * @param  string $locale
+     * @param string $locale
      * @return string
-     *
-     * @access public
      */
     function language( $locale = '' ) {
 
@@ -77,11 +70,8 @@ if ( ! function_exists( __NAMESPACE__ . '\\region' ) ) {
      * the locale if needed.  Note that not all locales will have a region, so this
      * might actually return the same thing as `language()`.
      *
-     * @since  1.0.0
-     * @param  string $locale
+     * @param string $locale
      * @return string
-     *
-     * @access public
      */
     function region( $locale = '' ) {
 
